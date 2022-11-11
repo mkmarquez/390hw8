@@ -17,7 +17,7 @@ debug.enabled = process.env.NODE_ENV !== "production";
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || "3000");
+const port = normalizePort(process.env.PORT || "5173");
 app.set("port", port);
 
 /**

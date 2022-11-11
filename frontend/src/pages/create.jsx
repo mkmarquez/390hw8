@@ -10,7 +10,7 @@ export function Create() {
     const requestData = JSON.stringify({title, content});
     const headers = {"content-type": "application/json"};
 
-    // ??
+    setDone(true)
     console.log(requestData);
   }
   if (done) {
@@ -22,6 +22,10 @@ export function Create() {
   }
   return (
     <form onSubmit={handleSubmit}>
+      <div>
+      <Link to="/"> Home</Link>
+      </div>
+      
       <input
         placeholder="title"
         value={title}

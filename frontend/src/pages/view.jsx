@@ -6,7 +6,7 @@ export function View() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     (async function () {
-      const req = await fetch("http://localhost:3000/blog/");
+      const req = await fetch("http://localhost:5173/blog/");
       const json = await req.json();
       setPosts(json);
     })();
