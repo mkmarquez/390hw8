@@ -1,5 +1,11 @@
-import {useState} from "react";
-import {Link} from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+//import { useEffect } from "react";
+//import { BlogModel } from "../../../backend/schema/blog";
+//import express from "express";
+//import router from "../../../backend/routes/blog.js";
+
+
 
 export function Create() {
   const [title, setTitle] = useState("");
@@ -7,11 +13,24 @@ export function Create() {
   const [done, setDone] = useState(false);
   function handleSubmit(e) {
     e.preventDefault();
-    const requestData = JSON.stringify({title, content});
-    const headers = {"content-type": "application/json"};
+    const requestData = JSON.stringify({ title, content });
+    const headers = { "content-type": "application/json" };
 
-    setDone(true)
-    console.log(requestData);
+
+    //useEffect(() => {
+    async function getResponse() {
+      const response = await fetch('http://localhost:5173/blog/create-post', { method: 'POST', body: requestData, headers });
+      await response.json();
+      setDone(true)
+    }
+
+    getResponse();
+
+
+    console.log(title);
+
+    
+
   }
   if (done) {
     return (
@@ -23,9 +42,9 @@ export function Create() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-      <Link to="/"> Home</Link>
+        <Link to="/"> Home</Link>
       </div>
-      
+
       <input
         placeholder="title"
         value={title}
