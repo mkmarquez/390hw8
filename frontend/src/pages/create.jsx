@@ -19,7 +19,7 @@ export function Create() {
 
     //useEffect(() => {
     async function getResponse() {
-      const response = await fetch('http://localhost:5173/blog/create-post', { method: 'POST', body: requestData, headers });
+      const response = await fetch('http://localhost:3000/blog/create-post', { method: 'POST', body: requestData, headers });
       await response.json();
       setDone(true)
     }
