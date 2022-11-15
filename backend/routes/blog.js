@@ -13,7 +13,6 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/create-post", async (req, res) => {
-  console.log("hi")
   // body should be JSON
   const body = req.body;
   // create blog model with the request body

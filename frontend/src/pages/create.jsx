@@ -16,8 +16,6 @@ export function Create() {
     const requestData = JSON.stringify({ title, content });
     const headers = { "content-type": "application/json" };
 
-
-    //useEffect(() => {
     async function getResponse() {
       const response = await fetch('http://localhost:3000/blog/create-post', { method: 'POST', body: requestData, headers });
       await response.json();
@@ -27,23 +25,22 @@ export function Create() {
     getResponse();
 
 
-    console.log(title);
 
-    
+
 
   }
   if (done) {
     return (
       <div>
-        <Link to="/view">Check out your blog post</Link>
+        <a href="/view">
+        <button style={{fontSize: 20}}>Check out your blog post!</button>
+      </a>
       </div>
     );
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <Link to="/"> Home</Link>
-      </div>
+      
 
       <input
         placeholder="title"

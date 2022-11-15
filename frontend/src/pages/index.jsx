@@ -1,13 +1,18 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Index() {
   return (
     <div>
-      <div>
-        <Link to="/create">Create</Link>
+      <div style={{ fontSize: 30}}>Welcome to my blog!</div>
+      <div style={{ alignItems: "center" }}>
+        <a href="/create">
+          <button style={{ fontSize: 20}}>Create</button>
+        </a>
       </div>
       <div>
-        <Link to="/view">View</Link>
+        <a href="/view">
+          <button style={{ fontSize: 20}}>View</button>
+        </a>
       </div>
     </div>
   );

@@ -13,7 +13,9 @@ export function View() {
   }, []);
   return (
     <div>
-      <Link to="/"> Home</Link>
+      <a href="/">
+        <button style={{fontSize: 20}}>Home</button>
+      </a>
       <div>
         {posts.map((post) => (
           <div
