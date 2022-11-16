@@ -13,9 +13,15 @@ export function View() {
   }, []);
   return (
     <div>
-      <a href="/">
+      <div><a href="/">
         <button style={{fontSize: 20}}>Home</button>
-      </a>
+      </a></div>
+      <div><a href="/update">
+        <button style={{fontSize: 20}}>Update a Blog</button>
+      </a></div>
+      <div><a href="/delete">
+        <button style={{fontSize: 20}}>Delete a Blog</button>
+      </a></div>
       <div>
         {posts.map((post) => (
           <div

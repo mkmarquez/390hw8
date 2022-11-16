@@ -24,4 +24,18 @@ router.post("/create-post", async (req, res) => {
   return res.send(blog.toObject());
 });
 
+router.post("/remove-post", async (req, res) => { //add handling if title doesnt exist
+  const id = await BlogModel.findOneAndDelete({ title: req.body.title });
+  const blogs = await BlogModel.find({});
+  return res.send(blogs.map((blog) => blog.toObject()));
+});
+
+router.post("/update-post", async (req, res) => { //add handling if title doesnt exist
+  console.log("hi")
+  const blog = await BlogModel.findOneAndUpdate({ title: req.body.title, content: req.body.content });
+  //await blog.save();
+  const blogs = await BlogModel.find({});
+  return res.send(blogs.map((blog) => blog.toObject()));
+});
+
 export default router;
